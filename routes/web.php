@@ -46,6 +46,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard/products/gallery/delete/{id}', 'DashboardProductController@deleteGallery')
             ->name('dashboard-product-gallery-delete');
 
+    Route::get('/dashboard/sliders', 'SliderController@index')->name('dashboard-slider');
+    Route::get('/dashboard/sliders/create', 'SliderController@create')->name('dashboard-slider-create');
+    Route::post('/dashboard/sliders', 'SliderController@store')->name('dashboard-slider-store');
+    Route::post('/dashboard/sliders/{id}', 'SliderController@update')->name('dashboard-slider-update');
+    Route::get('/dashboard/sliders/{id}', 'SliderController@destroy')->name('dashboard-slider-delete');        
+
     Route::get('/dashboard/transactions', 'DashboardTransactionController@index')->name('dashboard-transaction');
     Route::get('/dashboard/transactions/{id}', 'DashboardTransactionController@details')->name('dashboard-transaction-details');
     Route::post('/dashboard/transactions/{id}', 'DashboardTransactionController@update')->name('dashboard-transaction-update');
@@ -64,6 +70,7 @@ Route::prefix('admin')
         Route::resource('user', 'UserController');
         Route::resource('product', 'ProductController');
         Route::resource('product-gallery', 'ProductGalleryController');
+        Route::resource('slider', 'SliderController');
     });
 
 Auth::routes();

@@ -109,7 +109,7 @@ class ProductGalleryController extends Controller
      */
     public function edit($id)
     {
-
+        
     }
 
     /**
