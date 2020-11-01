@@ -25,6 +25,20 @@
                       <div class="card">
                         <div class="card-body">
                           <div class="row">
+                            <div class="col-md-3">
+                              <div class="card">
+                                <div class="card-body">
+                                  <img src="{{ Storage::url($user->image) }}" class="rounded-circle w-50 mb-2" style="height: 60px;">
+                                  <h5 class="card-title">{{ $user->name }}</h5>
+                                    <div class="custom-file">
+                                      <input type="file" name="image" id="files" class="custom-file-input">
+                                      <label for="files" class="custom-file-label">Pilih foto</label>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row mt-3">
                             <div class="col-md-6">
                               <div class="form-group">
                                 <label for="name">Your Name</label>

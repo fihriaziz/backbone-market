@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -86,6 +87,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'image' => 'default.png',
             'store_name' => isset($data['store_name']) ? $data['store_name'] : '' ,
             'categories_id' => isset($data['categories_id']) ? $data['categories_id'] : NULL,
             'store_status' => isset($data['is_store_open']) ? 1 : 0,

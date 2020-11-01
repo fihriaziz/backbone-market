@@ -50,7 +50,7 @@
                 data-toggle="dropdown"
               >
                 <img
-                  src="/images/icon-user.png"
+                  src="{{ Storage::url(Auth::user()->image) }}"
                   alt=""
                   class="rounded-circle mr-2 profile-picture"
                 />
@@ -58,6 +58,9 @@
               </a>
               <div class="dropdown-menu">
                 <a href="{{ route('dashboard') }}" class="dropdown-item">Dashboard</a>
+                @if (Auth::user()->roles === "ADMIN")
+                  <a href="{{ route('admin-dashboard') }}" class="dropdown-item">Dashboard-admin</a>
+                @endif
                 <a href="{{ route('dashboard-settings-account') }}" class="dropdown-item"
                   >Settings</a
                 >
@@ -95,6 +98,13 @@
               <a href="#" class="nav-link d-inline-block">
                 Cart
               </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
+                   class="nav-link d-inline-block">Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                   @csrf
+                 </form>
             </li>
           </ul>
           @endauth
