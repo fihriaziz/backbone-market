@@ -18,16 +18,17 @@
                 </ol>
                 <div class="carousel-inner">
                   @php 
-                    $no=1;
-                    foreach($sliders as $slider) : 
+                    $no=1; 
                   @endphp
+                    @foreach($sliders as $slider)
                   <div class="carousel-item {{ $no == 1 ? 'active' : '' }}" data-interval="4000">
                     <img src="{{ Storage::url($slider->photos) }}" class="d-block w-100" alt="Carousel Image">
                   </div>
                   @php 
                     $no++; 
-                    endforeach; 
-                  @endphp
+                  @endphp 
+                    @endforeach 
+                  
                 </div>
                 <a class="carousel-control-prev" href="#storeCarousel" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>

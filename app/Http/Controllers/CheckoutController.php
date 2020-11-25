@@ -93,6 +93,6 @@ class CheckoutController extends Controller
 
     public function callback(Request $request) 
     {
-
+        
     }
 }

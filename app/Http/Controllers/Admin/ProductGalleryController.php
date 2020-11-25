@@ -133,6 +133,9 @@ class ProductGalleryController extends Controller
     public function destroy($id)
     {
         $item = ProductGallery::findOrFail($id);
+        $file = $item->photos;
+        $destinationPath = public_path(Storage::url($file));
+        unlink($destinationPath);
         $item->delete();
 
         return redirect()->route('product-gallery.index');
