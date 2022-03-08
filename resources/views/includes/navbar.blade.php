@@ -65,7 +65,7 @@
                   >Settings</a
                 >
                 <div class="dropdown-divider"></div>
-                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                    class="dropdown-item">Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                    @csrf
@@ -74,7 +74,7 @@
             </li>
             <li class="nav-item">
               <a href="{{ route('cart') }}" class="nav-link d-inline-block mt-2">
-                @php 
+                @php
                   $carts = \App\Cart::where('users_id', Auth::user()->id)->count();
                 @endphp
                 @if ($carts > 0)
@@ -83,7 +83,7 @@
                 @else
                   <img src="/images/icon-cart-empty.svg" alt="" />
                 @endif
-                
+
               </a>
             </li>
           </ul>
@@ -100,7 +100,7 @@
               </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                    class="nav-link d-inline-block">Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                    @csrf

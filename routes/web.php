@@ -29,8 +29,8 @@ Route::get('/register/success', 'Auth\RegisterController@success')->name('regist
 Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/cart', 'CartController@index')->name('cart');
-    Route::delete('/cart/{id}', 'CartController@delete')->name('cart-delete');  
-    
+    Route::delete('/cart/{id}', 'CartController@delete')->name('cart-delete');
+
     Route::post('/checkout', 'CheckoutController@process')->name('checkout');
 
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
@@ -50,7 +50,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard/sliders/create', 'SliderController@create')->name('dashboard-slider-create');
     Route::post('/dashboard/sliders', 'SliderController@store')->name('dashboard-slider-store');
     Route::post('/dashboard/sliders/{id}', 'SliderController@update')->name('dashboard-slider-update');
-    Route::get('/dashboard/sliders/{id}', 'SliderController@destroy')->name('dashboard-slider-delete');        
+    Route::get('/dashboard/sliders/{id}', 'SliderController@destroy')->name('dashboard-slider-delete');
 
     Route::get('/dashboard/transactions', 'DashboardTransactionController@index')->name('dashboard-transaction');
     Route::get('/dashboard/transactions/{id}', 'DashboardTransactionController@details')->name('dashboard-transaction-details');
@@ -59,8 +59,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard/settings', 'DashboardSettingController@store')->name('dashboard-settings-store');
     Route::get('/dashboard/account', 'DashboardSettingController@account')->name('dashboard-settings-account');
     Route::post('/dashboard/account/{redirect}', 'DashboardSettingController@update')->name('dashboard-settings-redirect');
+    Route::post('/dashboard/store/{redirect}', 'DashboardSettingController@update_store')->name('dashboard-store-redirect');
 });
-    
+
 Route::prefix('admin')
     ->namespace('Admin')
     ->middleware(['auth','admin'])

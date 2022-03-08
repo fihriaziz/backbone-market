@@ -58,5 +58,5 @@ data-aos="fade-up"
       </div>
     </div>
   </div>
-</div> 
+</div>
 @endsection

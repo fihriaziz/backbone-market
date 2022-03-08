@@ -51,9 +51,9 @@
               class="list-group-item list-group-item-action {{ (request()->is('dashboard/account*')) ? 'active' : '' }}"
               >My Account</a
             >
-            <a 
-              href="{{ route('logout') }}" 
-              onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
+            <a
+              href="{{ route('logout') }}"
+              onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
               class="list-group-item list-group-item-action"
               >Sign Out
               </a>
@@ -104,7 +104,7 @@
                     <a href="{{ route('dashboard-settings-account') }}" class="dropdown-item">
                     Settings</a>
                     <div class="dropdown-divider"></div>
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                       class="dropdown-item">Logout</a>
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
@@ -112,7 +112,7 @@
                 </div>
                   <li class="nav-item">
                     <a href="{{ route('cart') }}" class="nav-link d-inline-block mt-2">
-                      @php 
+                      @php
                         $carts = \App\Cart::where('users_id', Auth::user()->id)->count();
                       @endphp
                       @if ($carts > 0)
@@ -133,7 +133,7 @@
                   </li>
                   <li class="nav-item">
                     <a href="{{ route('cart') }}" class="nav-link d-inline-block mt-2">
-                      @php 
+                      @php
                         $carts = \App\Cart::where('users_id', Auth::user()->id)->count();
                       @endphp
                       @if ($carts > 0)

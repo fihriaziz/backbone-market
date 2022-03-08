@@ -17,18 +17,18 @@
                   <li data-target="#storeCarousel" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
-                  @php 
-                    $no=1; 
+                  @php
+                    $no=1;
                   @endphp
                     @foreach($sliders as $slider)
                   <div class="carousel-item {{ $no == 1 ? 'active' : '' }}" data-interval="4000">
-                    <img src="{{ Storage::url($slider->photos) }}" class="d-block w-100" alt="Carousel Image">
+                    <img src="{{ Storage::url($slider->foto) }}" class="d-block w-100" alt="Carousel Image">
                   </div>
-                  @php 
-                    $no++; 
-                  @endphp 
-                    @endforeach 
-                  
+                  @php
+                    $no++;
+                  @endphp
+                    @endforeach
+
                 </div>
                 <a class="carousel-control-prev" href="#storeCarousel" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -72,7 +72,7 @@
               </a>
             </div>
             @empty
-                <div  class="col-12 text-center py-5" 
+                <div  class="col-12 text-center py-5"
                       data-aos="fade-up"
                       data-aos-delay="100">
                       No Categories Found
@@ -114,12 +114,12 @@
                   {{ $product->name }}
                 </div>
                 <div class="products-price">
-                  ${{ number_format($product->price) }}
+                  Rp. {{ number_format($product->price) }}
                 </div>
               </a>
             </div>
             @empty
-                <div  class="col-12 text-center py-5" 
+                <div  class="col-12 text-center py-5"
                       data-aos="fade-up"
                       data-aos-delay="100">
                       No Products Found

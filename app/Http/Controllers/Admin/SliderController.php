@@ -45,12 +45,12 @@ class SliderController extends Controller
                     </div>
                     </div>
                 </div>
-               '; 
+               ';
             })
-            ->editColumn('photos', function($item) {
-                return $item->photos ? '<img src=" '. Storage::url($item->photos) .'" style="max-height: 80px;" />' : '';
+            ->editColumn('foto', function($item) {
+                return $item->foto ? '<img src=" '. Storage::url($item->foto) .'" style="max-height: 80px;" />' : '';
             })
-            ->rawColumns(['action', 'photos'])
+            ->rawColumns(['action', 'foto'])
             ->make();
         }
         return view('pages.admin.slider.index');
@@ -80,7 +80,7 @@ class SliderController extends Controller
     {
         $data = $request->all();
 
-        $data['photos'] = $request->file('photos')->store('assets/slider', 'public');
+        $data['foto'] = $request->file('foto')->store('assets/slider', 'public');
 
         Slider::create($data);
 
@@ -123,12 +123,12 @@ class SliderController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        $data['photos'] = $request->file('photos')->store('assets/slider', 'public');
+        $data['foto'] = $request->file('foto')->store('assets/slider', 'public');
         $slider = Slider::findOrFail($id);
-        $file = $slider->photos;
+        $file = $slider->foto;
         $destinationPath = public_path(Storage::url($file));
         unlink($destinationPath);
-        
+
         $slider->update($data);
         return redirect()->route('slider.index');
     }
@@ -142,7 +142,7 @@ class SliderController extends Controller
     public function destroy($id)
     {
         $slider = Slider::findOrFail($id);
-        $file = $slider->photos;
+        $file = $slider->foto;
         $destinationPath = public_path(Storage::url($file));
         unlink($destinationPath);
 

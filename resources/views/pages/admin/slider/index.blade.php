@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Slider 
+    Slider
 @endsection
 
 @section('content')
@@ -40,10 +40,10 @@ data-aos="fade-up"
                 </div>
               </div>
             </div>
-        </div> 
+        </div>
     </div>
   </div>
-</div> 
+</div>
 @endsection
 
 @push('addon-script')
@@ -57,9 +57,9 @@ data-aos="fade-up"
         },
         columns: [
           { data: 'id', name: 'id'},
-          { data: 'photos', name: 'photos'},
-          { 
-            data: 'action', 
+          { data: 'foto', name: 'foto'},
+          {
+            data: 'action',
             name: 'action',
             orderable: false,
             searcable: false,

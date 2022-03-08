@@ -28,7 +28,7 @@
                             <div class="col-md-3">
                               <div class="card">
                                 <div class="card-body">
-                                  <img src="{{ Storage::url($user->image) }}" class="rounded-circle w-50 mb-2" style="height: 60px;">
+                                  <img src="{{ Storage::url($user->image) }}" class="rounded-circle w-50 mb-2" style="height: 65px;">
                                   <h5 class="card-title">{{ $user->name }}</h5>
                                     <div class="custom-file">
                                       <input type="file" name="image" id="files" class="custom-file-input">

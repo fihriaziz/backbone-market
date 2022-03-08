@@ -37,7 +37,7 @@ data-aos="fade-up"
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="">Foto Slider</label>
-                                    <input type="file" name="photos" class="form-control" required>
+                                    <input type="file" name="foto" class="form-control" required>
                                 </div>
                             </div>
                         <div class="row">
@@ -51,9 +51,9 @@ data-aos="fade-up"
                 </div>
               </div>
             </div>
-        </div> 
+        </div>
     </div>
   </div>
-</div> 
+</div>
 @endsection
 

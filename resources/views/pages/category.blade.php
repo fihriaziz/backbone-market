@@ -35,7 +35,7 @@
               </a>
             </div>
             @empty
-                <div  class="col-12 text-center py-5" 
+                <div  class="col-12 text-center py-5"
                       data-aos="fade-up"
                       data-aos-delay="100">
                       No Categories Found
@@ -76,12 +76,12 @@
                   {{ $product->name }}
                 </div>
                 <div class="products-price">
-                  ${{ $product->price }}
+                  Rp. {{ number_format($product->price) }}
                 </div>
               </a>
             </div>
             @empty
-                <div  class="col-12 text-center py-5" 
+                <div  class="col-12 text-center py-5"
                       data-aos="fade-up"
                       data-aos-delay="100">
                       No Products Found

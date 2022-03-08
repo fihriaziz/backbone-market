@@ -40,4 +40,16 @@ class DashboardSettingController extends Controller
 
         return redirect()->route($redirect);
     }
+
+    public function update_store(Request $request, $redirect)
+    {
+        $store = Auth::user();
+
+        $store->store_status = $request->store_status;
+        $store->categories_id = $request->categories_id;
+        $store->store_name = $request->store_name;
+        $store->save();
+
+        return redirect()->route($redirect);
+    }
 }

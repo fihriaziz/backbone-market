@@ -20,7 +20,7 @@
               <div class="dashboard-content">
                 <div class="row">
                   <div class="col-12">
-                    <form action="{{ route('dashboard-settings-redirect', 'dashboard-settings-store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('dashboard-store-redirect', 'dashboard-settings-store') }}" method="POST" enctype="multipart/form-data">
                       @csrf
                       <div class="card">
                         <div class="card-body">
@@ -35,9 +35,8 @@
                               <div class="form-group">
                                 <label>Category</label>
                                 <select name="categories_id" id="" class="form-control">
-                                <option value="{{ $user->categories_id }}">Tidak diganti</option>
                                   @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}"> {{ $category->name }}</option>
+                                    <option value="{{ $category->id }}"{{ $user->categories_id == $category->id ? 'selected' : '' }}> {{ $category->name }}</option>
                                   @endforeach
                                 </select>
                               </div>
